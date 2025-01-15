@@ -7,8 +7,8 @@ import (
 
 	structpb "github.com/golang/protobuf/ptypes/struct"
 	"github.com/hashicorp/terraform-svchost/disco"
-	be "github.com/hashicorp/terraform/internal/backend"
-	backendInit "github.com/hashicorp/terraform/internal/backend/init"
+	be "github.com/opentofu/opentofu/internal/backend"
+	backendInit "github.com/opentofu/opentofu/internal/backend/init"
 	pulumirpc "github.com/pulumi/pulumi/sdk/v3/proto/go"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"

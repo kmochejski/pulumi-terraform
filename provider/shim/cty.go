@@ -19,7 +19,7 @@ import (
 	"unicode"
 
 	structpb "github.com/golang/protobuf/ptypes/struct"
-	"github.com/hashicorp/terraform/internal/states"
+	"github.com/opentofu/opentofu/internal/states"
 	"github.com/pkg/errors"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource/plugin"
