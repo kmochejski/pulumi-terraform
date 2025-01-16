@@ -19,7 +19,7 @@ import (
 	"log"
 
 	"github.com/golang/protobuf/ptypes/empty"
-	"github.com/hashicorp/terraform/shim"
+	"github.com/opentofu/opentofu/shim"
 	"github.com/pulumi/pulumi/pkg/v3/resource/provider"
 	"github.com/pulumi/pulumi/sdk/v3/go/common/resource"
 	"github.com/pulumi/pulumi/sdk/v3/proto/go"

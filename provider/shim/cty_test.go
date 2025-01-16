@@ -18,7 +18,7 @@ import (
 	"testing"
 
 	structpb "github.com/golang/protobuf/ptypes/struct"
-	"github.com/hashicorp/terraform/internal/states"
+	"github.com/opentofu/opentofu/internal/states"
 	"github.com/stretchr/testify/require"
 	"github.com/zclconf/go-cty/cty"
 )
