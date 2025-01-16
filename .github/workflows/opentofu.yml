@@ -79,19 +79,12 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 6.x
         goversion:
         - 1.21.x
         language:
         - nodejs
-        - python
-        - dotnet
-        - go
         nodeversion:
         - 18.x
-        pythonversion:
-        - "3.8"
   prerequisites:
     name: prerequisites
     runs-on: ubuntu-latest
