@@ -354,11 +354,11 @@ jobs:
         - 18.x
         pythonversion:
         - "3.8"
-name: master
+name: opentofu
 "on":
   push:
     branches:
-    - master
+    - opentofu
     paths-ignore:
     - '**.md'
     tags-ignore:
