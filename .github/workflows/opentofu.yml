@@ -121,14 +121,10 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 6.x
         goversion:
         - 1.21.x
         nodeversion:
         - 18.x
-        pythonversion:
-        - "3.8"
   publish:
     name: publish
     needs: test
@@ -281,14 +277,6 @@ jobs:
       with:
         node-version: ${{matrix.nodeversion}}
         registry-url: https://registry.npmjs.org
-    - name: Setup DotNet
-      uses: actions/setup-dotnet@v1
-      with:
-        dotnet-version: ${{matrix.dotnetversion}}
-    - name: Setup Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: ${{matrix.pythonversion}}
     - name: Download provider + tfgen binaries
       uses: actions/download-artifact@v4
       with:
@@ -334,19 +322,12 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        dotnetversion:
-        - 6.x
         goversion:
         - 1.21.x
         language:
         - nodejs
-        - python
-        - dotnet
-        - go
         nodeversion:
         - 18.x
-        pythonversion:
-        - "3.8"
 name: opentofu
 "on":
   push:
