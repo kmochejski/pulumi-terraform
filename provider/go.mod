@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-terraform/provider/v5
+module github.com/kmochejski/pulumi-terraform/provider/v5
 
 go 1.22
 
@@ -6,6 +6,7 @@ toolchain go1.23.4
 
 replace (
 	cloud.google.com/go/storage => cloud.google.com/go/storage v1.36.0
+	github.com/hashicorp/hcl/v2 v2.20.1 => github.com/opentofu/hcl/v2 v2.0.0-20240814143621-8048794c5c52
 	github.com/opentofu/opentofu/shim => ./shim
 	github.com/spf13/afero => github.com/spf13/afero v1.9.3
 	google.golang.org/api => google.golang.org/api v0.155.0

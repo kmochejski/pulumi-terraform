@@ -6,6 +6,7 @@ toolchain go1.23.4
 
 replace (
 	github.com/hashicorp/consul/api => github.com/hashicorp/consul/api v1.13.0
+	github.com/hashicorp/hcl/v2 v2.20.1 => github.com/opentofu/hcl/v2 v2.0.0-20240814143621-8048794c5c52
 	github.com/spf13/afero => github.com/spf13/afero v1.9.3
 	k8s.io/client-go => k8s.io/client-go v0.23.4
 )

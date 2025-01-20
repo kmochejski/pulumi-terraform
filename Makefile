@@ -1,5 +1,5 @@
 PACK             := terraform
-ORG              := pulumi
+ORG              := kmochejski
 PROJECT          := github.com/${ORG}/pulumi-${PACK}
 NODE_MODULE_NAME := @pulumi/${PACK}
 TF_NAME          := ${PACK}
@@ -22,7 +22,7 @@ only_build:: build
 provider:: # build the provider binary
 	(cd provider && go build -o $(WORKING_DIR)/bin/${PROVIDER} -ldflags "-X ${PROJECT}/${VERSION_PATH}=${VERSION}" ${PROJECT}/${PROVIDER_PATH}/cmd/${PROVIDER})
 
-build_sdks:: provider build_nodejs
+build_sdks:: provider build_nodejs build_go
 
 build_nodejs:: VERSION := $(shell pulumictl get version --language javascript)
 build_nodejs:: # build the node sdk
@@ -31,6 +31,8 @@ build_nodejs:: # build the node sdk
         yarn run tsc && \
         cp ../../README.md ../../LICENSE package.json yarn.lock ./bin/ && \
     	sed -i.bak -e "s/\$${VERSION}/$(VERSION)/g" ./bin/package.json
+
+build_go:: # build the go sdk
 
 lint_provider:: provider # lint the provider code
 	cd provider && golangci-lint run -c ../.golangci.yml
@@ -47,5 +49,7 @@ clean::
 
 install_nodejs_sdk::
 	yarn link --cwd $(WORKING_DIR)/sdk/nodejs/bin
+
+install_go_sdk::
 
 install_sdks:: install_nodejs_sdk

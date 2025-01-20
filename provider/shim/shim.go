@@ -9,6 +9,7 @@ import (
 	"github.com/hashicorp/terraform-svchost/disco"
 	be "github.com/opentofu/opentofu/internal/backend"
 	backendInit "github.com/opentofu/opentofu/internal/backend/init"
+	"github.com/opentofu/opentofu/internal/encryption"
 	pulumirpc "github.com/pulumi/pulumi/sdk/v3/proto/go"
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
@@ -67,7 +68,7 @@ func RemoteStateReferenceRead(ctx context.Context, req *pulumirpc.ReadRequest) (
 	}
 
 	// Get the configuration schema from the backend
-	backend := backendInitFn()
+	backend := backendInitFn(encryption.StateEncryptionDisabled())
 
 	// Attempt to coerce our config object into the config schema types - note errors
 	backendConfigCoerced, err := backend.ConfigSchema().CoerceValue(backendConfigCty)
